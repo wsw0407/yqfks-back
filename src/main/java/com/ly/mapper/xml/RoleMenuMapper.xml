@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.mapper.RoleMenuMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ly.entity.RoleMenu">
+        <id column="roleid" property="roleid" />
+        <result column="menuid" property="menuid" />
+    </resultMap>
+
+    <select id="getMenuByRoleId" resultType="com.ly.entity.Menu">
+		SELECT tm.*
+        FROM t_role_menu trm,t_menu tm
+        WHERE trm.menuid = tm.id AND trm.roleid =#{0}
+	</select>
+
+</mapper>

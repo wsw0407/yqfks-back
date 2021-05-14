@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ly.mapper.RegCodeMapper">
+
+    <insert id="addRegCode">
+		insert into reg_code(code) values(#{0});
+	</insert>
+
+    <select id="getRegCode" resultType="com.ly.entity.RegistCode">
+		select * from reg_code where code=#{0}
+	</select>
+
+</mapper>
